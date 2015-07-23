@@ -1,2 +1,1 @@
-web: guincorn cosoligrest.wsgi
-
+web: gunicorn cosoligrest.wsgi
