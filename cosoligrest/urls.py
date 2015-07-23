@@ -20,5 +20,5 @@ from blog.models import Miembros
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('blog.urls')),
-    url(r'^miembros/$', Miembros.as_view())
+    #url(r'^miembros/$', Miembros.as_view())
 ]
