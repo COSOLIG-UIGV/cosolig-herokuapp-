@@ -1,7 +1,7 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from unipath import Path
-
+import os
 BASE_DIR = Path(__file__).ancestor(2)
 
 
@@ -100,5 +100,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'staticfiles'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 TEMPLATE_DIRS = [BASE_DIR.child('template')]
