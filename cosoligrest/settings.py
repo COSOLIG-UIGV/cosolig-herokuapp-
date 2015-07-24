@@ -1,7 +1,7 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from unipath import Path
-import os
+
 BASE_DIR = Path(__file__).ancestor(2)
 
 
@@ -12,9 +12,11 @@ BASE_DIR = Path(__file__).ancestor(2)
 SECRET_KEY = '582z(q-$v%@2=t42xv%+*5z_(=a6r01nj*#rc0bh9c=-ad4$4d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG = False
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -101,8 +103,5 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'staticfiles'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 TEMPLATE_DIRS = [BASE_DIR.child('template')]
