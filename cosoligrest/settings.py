@@ -72,12 +72,12 @@ WSGI_APPLICATION = 'cosoligrest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'app_cosolig',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3688nlb2arvvg',
+        'USER': 'hjoygtketpstrt',
+        'PASSWORD': '_xVYQXuCh4onxeyRqT3F7BOUbD',
+        'HOST': 'ec2-107-20-223-116.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
