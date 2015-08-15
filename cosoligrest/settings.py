@@ -1,8 +1,10 @@
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
 from unipath import Path
 
 BASE_DIR = Path(__file__).ancestor(2)
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -98,8 +100,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = (os.path.join(BASE_DIR ,'static'),)
 STATIC_ROOT = 'staticfiles'
-
-
 TEMPLATE_DIRS = [BASE_DIR.child('template')]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
