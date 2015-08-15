@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Post
 from .models import Miembros
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .serializers import PostSerializer
 from .serializers import MiembrosSerializer
 from django.views.generic import ListView
@@ -11,12 +11,12 @@ from django.views.generic import ListView
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
 class MiembrosViewSet(viewsets.ModelViewSet):
     queryset = Miembros.objects.all()
     serializer_class = MiembrosSerializer
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 # Create your views here.
 
 class PostView(ListView):
@@ -32,3 +32,5 @@ class PostView(ListView):
     def get_queryset(self, **kwargs):
         queryset = Post.objects.filter(evento_activo=True)
         return queryset
+
+    
